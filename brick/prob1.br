@@ -1,0 +1,16 @@
+fn main
+    let! x = [0 ... 1000].filter -> |x| { 
+        x % 3 == 0 or x % 5 ==0 
+    }.sum()
+
+    puts("%i", x)
+
+
+#OR
+fn main
+    let! x = 
+        [0 ... 1000]
+            |> filter -> |x| { x % 3 == 0 or x % 5 == 0 }
+            |> sum
+
+    puts("%i", x)
